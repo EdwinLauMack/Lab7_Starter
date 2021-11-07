@@ -200,8 +200,8 @@ function bindEscKey() {
    * page. This will let us go back to the home page from the detailed page.
    */
    document.addEventListener('keydown', (e) => {
-    if(e.key == "Escape")
-      router.navigate('home')
+    if(e.key === "Escape")
+      router.navigate('home', false);
     });
 }
 
@@ -225,12 +225,12 @@ function bindPopstate() {
    * creating an infinite loop
    */
    window.addEventListener('popstate', (event) => {
-    if(event.state){
-      router.navigate(event.state["page"], true)
+    if(event.state !== null){
+      router.navigate(event.state, true)
     }
     else{
       router.navigate('home', true);  
     }
   })
 
-}
+} 

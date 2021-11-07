@@ -50,6 +50,7 @@
    */
   navigate(page, statePopped) {
     console.log(`navigate() function called, requested page: ${page}`);
+
     /**
      * TODO - Part 1 - Step 4
      * Now, we are going to call the functions that we stored earlier based on 
@@ -67,14 +68,13 @@
      *  4. Finally, call the stored function for the given page
      */
 
-     
     if (!this[page]) {
       console.log("ERROR - requested page was not found ");
       return;
     }
-
+    
     let hash;
-    if (page == 'home') {
+    if (page === 'home') {
       hash = '';
     }
     else {
@@ -83,8 +83,7 @@
     
     if (!statePopped && window.location.hash != hash)
     {
-      const url = window.location.pathname + hash;
-      history,pushState({ "page" : page}, '', url); 
+      history,pushState({page:page}, '' , window.location.origin + hash); 
     }
 
     this[page]();

@@ -10,7 +10,6 @@ var urlsToCache = [
     "assets/components/RecipeCard.js", 
     "assets/components/RecipeExpand.js",
     "assets/styles/main.css",
-    "index.html",
 
 ];
 
