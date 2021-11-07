@@ -12,7 +12,7 @@ var urlsToCache = [
     "assets/styles/main.css",
     "index.html",
     */
-    '/',
+   '/',
 ];
 
 // Once the service worker has been installed, feed it some initial URLs to cache
@@ -38,13 +38,25 @@ self.addEventListener('install', function (event) {
  * in the same scope do not need to be reloaded before their fetches will
  * go through this service worker
  */
-self.addEventListener('activate', function (event) { 
+ self.addEventListener('activate', function (event) {
   /**
    * TODO - Part 2 Step 3
    * Create a function as outlined above, it should be one line
    */
+   
+   var cacheAllowlist = ['test-cache-v1','test2-cache-v1'];
 
-   event.waitUntil(clients.claim());
+   event.waitUntil(
+     caches.keys().then(function(cacheNames) {
+       return Promise.all(
+         cacheNames.map(function(cacheName) {
+           if (cacheAllowlist.indexOf(cacheName) === -1) {
+             return caches.delete(cacheName);
+           }
+         })
+       );
+     })
+   );
 });
 
 // Intercept fetch requests and store them in the cache
