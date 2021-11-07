@@ -12,7 +12,7 @@ var urlsToCache = [
     "assets/styles/main.css",
     "index.html",
     */
-    '/'
+    '/',
 ];
 
 // Once the service worker has been installed, feed it some initial URLs to cache
