@@ -222,7 +222,7 @@ function bindPopstate() {
    * 
    * IMPORTANT: Pass in the boolean true as the second argument in navigate() here
    * so your navigate() function does not add your going back action to the history,
-   * creating an infinite loop
+   * creating an infinite loops
    */
    window.addEventListener('popstate', (event) => {
     if(event.state !== null){
