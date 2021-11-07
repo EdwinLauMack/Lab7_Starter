@@ -38,7 +38,7 @@
      * router instance using the 'this' keyword. Substitute 'home' for the variable
      * page
      */
-    this['page'] = pageFunc;
+    this[page] = pageFunc;
   }
 
   /**
@@ -82,7 +82,7 @@
     if (!statePopped && window.location.hash != hash)
     {
       const url = window.location.pathname + hash;
-      history,pushState({ page : page}, '', url); 
+      history,pushState({"page": page}, '', url); 
     }
 
     this[page]();
