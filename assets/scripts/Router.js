@@ -82,7 +82,7 @@
     if (!statePopped && window.location.hash != hash)
     {
       const url = window.location.pathname + hash;
-      history,pushState({"page":page}, '', url); 
+      history,pushState({ page: page}, '', url); 
     }
 
     this[page]();
