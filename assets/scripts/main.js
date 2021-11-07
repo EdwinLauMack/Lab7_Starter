@@ -226,7 +226,7 @@ function bindPopstate() {
    */
    window.addEventListener('popstate', (event) => {
     if(event.state){
-      router.navigate(event.state.page, true)
+      router.navigate(event.state["page"], true)
     }
     else{
       router.navigate('home', true);  

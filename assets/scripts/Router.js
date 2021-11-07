@@ -73,16 +73,18 @@
       return;
     }
 
-    let hash = "";
-
-    if (page != "home"){
+    let hash;
+    if (page == 'home') {
+      hash = '';
+    }
+    else {
       hash = "#" + page;
     }
     
     if (!statePopped && window.location.hash != hash)
     {
       const url = window.location.pathname + hash;
-      history,pushState({"page": page}, '', url); 
+      history,pushState({ "page" : page}, '', url); 
     }
 
     this[page]();
